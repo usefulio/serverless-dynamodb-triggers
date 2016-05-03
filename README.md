@@ -9,15 +9,15 @@ This is a bare-bones [Serverless](http://serverless.com) project that simply sho
 
 ## Getting Started
 
-__Install Serverless__
+__1. Install Serverless__
 
 `npm install -g serverless`
 
-__Setup your AWS Credentials__
+__2. Setup your AWS Credentials__
 
 Follow the [official guide](http://docs.serverless.com/docs/configuring-aws) here.
 
-__Customize Your Resources__
+__3. (optional) Customize Your Resources/Set up your Stage__
 
 This is just a sample to show how to link up the moving pieces. 
 You'll probably want to edit the name of your DynamoDB table,
@@ -33,11 +33,11 @@ simply logs the event it receives to the console so you can see it
 in CloudWatch. The only important part about the sample function is
 the event configuration in `processStreamEvent/s-function.json`.
 
-__Deploy Resources__
+__4. Deploy Resources__
 
 `sls resources deploy`
 
-__Deploy Function__
+__5. Deploy Function & Event__
 
 `sls dash deploy` then deploy everything to the stage you want.
 
@@ -49,6 +49,12 @@ an item in the table you created. Go to CloudWatch and in a few moments
 and is cold), you should see the event output in your Logs.
 
 You'll find the info you want under the `event.dynamodb` object.
+
+## Learning
+
+If you're trying to figure out what all the different pieces that have been added
+compared to a freshly generated Serverless project, simply follow the git commit
+history, it explains what's happening step by step.
 
 ## Notes
 
