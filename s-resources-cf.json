@@ -133,6 +133,15 @@
           "Arn"
         ]
       }
+    },
+    "ExampleDynamoTableStreamArn": {
+      "Description": "Arn of the Example DynamoDB Table Stream",
+      "Value": {
+        "Fn::GetAtt": [
+          "ExampleDynamoTable",
+          "StreamArn"
+        ]
+      }
     }
   }
 }
