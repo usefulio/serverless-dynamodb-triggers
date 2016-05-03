@@ -1,1 +1,37 @@
-{}
+{
+    "Records": [
+        {
+            "eventID": "eb8f4b759279bd959579b3607f280126",
+            "eventName": "INSERT",
+            "eventVersion": "1.0",
+            "eventSource": "aws:dynamodb",
+            "awsRegion": "us-east-1",
+            "dynamodb": {
+                "Keys": {
+                    "_id": {
+                        "S": "test-006"
+                    }
+                },
+                "NewImage": {
+                    "_id": {
+                        "S": "test-006"
+                    },
+                    "content": {
+                        "S": "taipei loves cheesy fries"
+                    },
+                    "email": {
+                        "M": {
+                            "subject": {
+                                "S": "I want that ring!"
+                            }
+                        }
+                    }
+                },
+                "SequenceNumber": "600000000002380085368",
+                "SizeBytes": 87,
+                "StreamViewType": "NEW_AND_OLD_IMAGES"
+            },
+            "eventSourceARN": "arn:aws:dynamodb:us-east-1:068736466993:table/this-is-just-a-sample/stream/2016-03-15T12:35:25.706"
+        }
+    ]
+}
