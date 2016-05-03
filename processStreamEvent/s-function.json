@@ -14,10 +14,13 @@
   "endpoints": [],
   "events": [
     {
-      "name": "mySchedule",
-      "type": "schedule",
+      "name": "messagesTable",
+      "type": "dynamodbstream",
       "config": {
-        "schedule": "rate(5 minutes)"
+        "streamArn": "${exampleDynamoTableStreamArn}",
+        "startingPosition": "LATEST",
+        "batchSize": 5,
+        "enabled": true
       }
     }
   ],
