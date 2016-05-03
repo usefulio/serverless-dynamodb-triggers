@@ -48,6 +48,40 @@
           }
         ]
       }
+    },
+    "IamPolicyLambdaInvocationDynamoDB": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "${stage}-${project}-dynamo-stream-lambda",
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": [
+                "lambda:InvokeFunction"
+              ],
+              "Resource": "*"
+            },
+            {
+              "Effect": "Allow",
+              "Action": [
+                "dynamodb:DescribeStream",
+                "dynamodb:GetRecords",
+                "dynamodb:GetShardIterator",
+                "dynamodb:ListStreams",
+                "dynamodb:PutItem"
+              ],
+              "Resource": "*"
+            }
+          ]
+        },
+        "Roles": [
+          {
+            "Ref": "IamRoleLambda"
+          }
+        ]
+      }
     }
   },
   "Outputs": {
